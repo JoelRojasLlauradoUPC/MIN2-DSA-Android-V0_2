@@ -1,3 +1,15 @@
+# MIN 2 - DSA
+
+Canvis realitzats:
+- S'ha afegit el layout item_team_ranking.xml
+- S'ha afegit el layout activity_team_ranking.xml
+- S'ha afegit la ruta /teams/ranking a l'ApiService
+- S'ha creat el TeamRankingAdapter
+- S'ha creat el TeamRankingActivity
+
+Conclusió:
+- S'ha implementat tot el que es solicitava en l'EJ1 del MÍN 2.
+
 # 🎣 Fish & Chill: Fishing & PvP Combat
 
 Welcome to the central repository for **Fish & Chill**! This project is a multiplayer fishing simulation game with a twist: survival and Player-vs-Player (PvP) competition.
