@@ -1,6 +1,7 @@
 package com.example.android_proyecto.Activities;
 
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -36,6 +37,9 @@ public class TeamRankingActivity extends AppCompatActivity {
         rvTeams.setLayoutManager(new LinearLayoutManager(this));
         adapter = new TeamRankingAdapter();
         rvTeams.setAdapter(adapter);
+
+        Button btnBack2 = findViewById(R.id.btnBack2);
+        btnBack2.setOnClickListener(v -> finish());
 
         loadTeamsRanking();
     }

@@ -19,16 +19,21 @@
 
         <TextView
             android:id="@+id/txtName"
-            android:textStyle="bold"
-            android:textSize="16sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/pixel_font"/>
 
         <TextView
             android:id="@+id/txtPoints"
-            android:textSize="14sp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/pixel_font"/>
     </LinearLayout>
 
 </LinearLayout>
