@@ -3,6 +3,7 @@ package com.example.android_proyecto.Services;
 import com.example.android_proyecto.Models.Faq;
 import com.example.android_proyecto.Models.FishingRod;
 import com.example.android_proyecto.Models.QuestionRequest;
+import com.example.android_proyecto.Models.Team;
 import com.example.android_proyecto.Models.Token;
 import com.example.android_proyecto.Models.User;
 import com.example.android_proyecto.Models.UserLogIn;
@@ -21,6 +22,11 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 
 public interface ApiService {
+
+    // --- TEAMS ---
+
+    @GET("teams/ranking")
+    Call<List<Team>> getTeamsRanking();
 
     // --- AUTH ---
 

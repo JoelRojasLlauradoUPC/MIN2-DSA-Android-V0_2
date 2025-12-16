@@ -8,6 +8,22 @@
     android:backgroundTintMode="src_in">
 
 
+    <Button
+        android:id="@+id/btnFaq2"
+        android:layout_width="250dp"
+        android:layout_height="34dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/pixel_button_bg"
+        android:fontFamily="@font/pixel_font"
+        android:text="View Rankings"
+        android:textSize="14sp"
+        app:backgroundTint="@null"
+        app:layout_constraintEnd_toEndOf="@+id/btnVideo"
+        app:layout_constraintStart_toStartOf="@+id/btnFaq"
+        app:layout_constraintTop_toBottomOf="@+id/btnFaq" />
+
     <ImageView
         android:id="@+id/ivGameLogo2"
         android:layout_width="404dp"
@@ -32,10 +48,10 @@
         app:backgroundTint="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintVertical_bias="0.483" />
 
     <Button
         android:id="@+id/btnGoRegister"
@@ -56,15 +72,15 @@
     <Button
         android:id="@+id/btnFaq"
         android:layout_width="111dp"
-        android:layout_height="32dp"
+        android:layout_height="34dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/pixel_button_bg"
         android:fontFamily="@font/pixel_font"
         android:text="FAQs"
         android:textSize="14sp"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.38"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,16 +88,16 @@
 
     <Button
         android:id="@+id/btnVideo"
-        android:layout_width="145dp"
+        android:layout_width="111dp"
         android:layout_height="34dp"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/pixel_button_bg"
         android:fontFamily="@font/pixel_font"
         android:text="VIDEOs"
         android:textSize="14sp"
         app:backgroundTint="@null"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.62"
         app:layout_constraintStart_toStartOf="parent"
