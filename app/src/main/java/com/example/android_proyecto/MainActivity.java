@@ -10,6 +10,7 @@ import com.example.android_proyecto.Activities.FaqActivity;
 import com.example.android_proyecto.Activities.LogInActivity;
 import com.example.android_proyecto.Activities.RegisterActivity;
 import com.example.android_proyecto.Activities.VideoActivity;
+import com.example.android_proyecto.Activities.TeamRankingActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnGoRegister = findViewById(R.id.btnGoRegister);
         Button btnFaq = findViewById(R.id.btnFaq);
         Button btnVideo = findViewById(R.id.btnVideo);
-
+        Button btnViewRankings = findViewById(R.id.btnViewRankings);
         btnGoLogin.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, LogInActivity.class)));
 
@@ -34,5 +35,8 @@ public class MainActivity extends AppCompatActivity {
 
         btnVideo.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, VideoActivity.class)));
+
+        btnViewRankings.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, TeamRankingActivity.class)));
     }
 }

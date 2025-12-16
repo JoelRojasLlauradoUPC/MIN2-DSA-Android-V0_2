@@ -1,15 +1,14 @@
 package com.example.android_proyecto.Activities;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ProgressBar;
-import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.android_proyecto.Adapters.TeamsRankingAdapter;
+import com.example.android_proyecto.Adapters.TeamRankingAdapter;
 import com.example.android_proyecto.Models.Team;
 import com.example.android_proyecto.R;
 import com.example.android_proyecto.RetrofitClient;
@@ -21,60 +20,45 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class TeamsRankingActivity extends AppCompatActivity {
+public class TeamRankingActivity extends AppCompatActivity {
 
     private ApiService api;
-
-    private RecyclerView recycler;
-    private TeamsRankingAdapter adapter;
-
-    private ProgressBar progress;
-    private TextView tvMsg;
+    private TeamRankingAdapter adapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_teams_ranking);
-
-        recycler = findViewById(R.id.recyclerTeams);
-        progress = findViewById(R.id.progressTeams);
-        tvMsg = findViewById(R.id.tvMsgTeams);
-
-        recycler.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new TeamsRankingAdapter();
-        recycler.setAdapter(adapter);
+        setContentView(R.layout.activity_team_ranking);
 
         api = RetrofitClient.getApiService();
 
-        loadRanking();
+        RecyclerView rvTeams = findViewById(R.id.rvTeams);
+        rvTeams.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new TeamRankingAdapter();
+        rvTeams.setAdapter(adapter);
+
+        loadTeamsRanking();
     }
 
-    private void showLoading(boolean show) {
-        progress.setVisibility(show ? View.VISIBLE : View.GONE);
-    }
-
-    private void loadRanking() {
-        showLoading(true);
-        tvMsg.setText("");
-
+    private void loadTeamsRanking() {
         Call<List<Team>> call = api.getTeamsRanking();
         call.enqueue(new Callback<List<Team>>() {
             @Override
             public void onResponse(Call<List<Team>> call, Response<List<Team>> response) {
-                showLoading(false);
-
                 if (response.isSuccessful() && response.body() != null) {
-                    adapter.setData(response.body());
-                }
-                else {
-                    tvMsg.setText("Error: " + response.code());
+                    adapter.setTeams(response.body());
+                } else {
+                    Toast.makeText(TeamRankingActivity.this,
+                            "Error loading ranking: " + response.code(),
+                            Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onFailure(Call<List<Team>> call, Throwable t) {
-                showLoading(false);
-                tvMsg.setText("Connection error: " + t.getMessage());
+                Toast.makeText(TeamRankingActivity.this,
+                        "Connection error: " + t.getMessage(),
+                        Toast.LENGTH_SHORT).show();
             }
         });
     }
